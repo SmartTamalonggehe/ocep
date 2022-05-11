@@ -142,27 +142,5 @@
 @endsection
 
 @section('script')
-    <script>
-        $('.btn-hapus').click(function(e) {
-            e.preventDefault();
-            let href = $(this).attr('href')
-            swal({
-                title: "Yakin Menghapus Data Ini?",
-                text: "Data Akan Terhapus Permanent!",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Yakin!",
-                cancelButtonText: "Batal",
-                closeOnConfirm: false,
-                closeOnCancel: false
-            }, function(isConfirm) {
-                if (isConfirm) {
-                    document.getElementById('formHapus').action = href
-                    document.getElementById('formHapus').submit();
-                }
-            });
-        });
-    </script>
-
+    <script src="{{ mix('js/crud.js') }}"></script>
 @endsection
