@@ -136,8 +136,6 @@
         <?php echo csrf_field(); ?>
         <?php echo method_field('DELETE'); ?>
     </form>
-
-
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('script'); ?>

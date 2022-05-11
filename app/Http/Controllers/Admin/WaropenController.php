@@ -89,10 +89,17 @@ class WaropenController extends Controller
      */
     public function update(Request $request, $id)
     {
-        waropen::find($id)->update([
-            'bhs_waropen' => $request->bhs_waropen,
-            'audio' => $request->audio
-        ]);
+        $data = $request->all();
+        $waropen = waropen::find($id);
+        $nama_audio = $waropen->audio;
+        if ($request->hasFile('audio')) {
+            Storage::delete('public/audio/' . $waropen->audio);
+            $ektensi_audio = $request->file('audio')->extension();
+            $nama_audio = time() . '.' . $ektensi_audio;
+            Storage::putFileAs('public/audio', $request->audio, $nama_audio);
+        }
+        $data['audio'] = $nama_audio;
+        waropen::find($id)->update($data);
         return redirect()->route('waropen.index')
             ->with('berhasil', 'Data Berhasil Diubah');
     }
