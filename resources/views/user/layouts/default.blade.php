@@ -1,16 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
 @include('user.layouts.head')
 
-    <body id="page-top">
+<body>
+    @include('user.layouts.header')
+    <section class="content">
+        @yield('content')
+    </section>
+    @include('user.layouts.footer')
+    @include('user.layouts.script')
+</body>
 
-@include('user.layouts.navbar')
-
-@include('user.layouts.masthead')
-
-@yield('main')
-
-@include('user.layouts.footer')
-
-@include('user.layouts.script')
-
-    </body>
-    </html>
+</html>
