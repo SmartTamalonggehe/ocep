@@ -157,30 +157,7 @@
 
 
 <?php $__env->startSection('script'); ?>
-
-    <script>
-        $('.btn-hapus').click(function(e) {
-            e.preventDefault();
-            let href = $(this).attr('href')
-            swal({
-                title: "Yakin Menghapus Data Ini?",
-                text: "Data Akan Terhapus Permanent!",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Yakin!",
-                cancelButtonText: "Batal",
-                closeOnConfirm: false,
-                closeOnCancel: false
-            }, function(isConfirm) {
-                if (isConfirm) {
-                    document.getElementById('formHapus').action = href
-                    document.getElementById('formHapus').submit();
-                }
-            });
-        });
-    </script>
-
+    <script src="<?php echo e(mix('js/crud.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('admin.layouts.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /media/smartspartacus/Assets/Projects/Laravel8/Kamus_Waropen/resources/views/admin/indo_warop/index.blade.php ENDPATH**/ ?>
