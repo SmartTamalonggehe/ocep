@@ -14,7 +14,7 @@
             <div class="content-header">
                 <div class="d-flex align-items-center">
                     <div class="me-auto">
-                        <h3 class="page-title">BAHASA INDONESIA</h3>
+                        <h3 class="page-title">MULTI BAHASA</h3>
                         <div class="d-inline-block align-items-center">
                         </div>
                     </div>
